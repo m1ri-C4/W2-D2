@@ -113,7 +113,7 @@ console.log(`Totale carrello: ${totale}€ - Spedizione: ${costoSpedizione} - To
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let numeri = [];
-numeri.push(1,4,5);
+numeri.push(1, 4, 5);
 console.log(numeri);
 numeri.unshift(0);
 console.log(numeri);
@@ -126,7 +126,9 @@ console.log(numeri.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let cartoleria = ['Penna', 'Quaderno', 'Zaino', 'Astuccio'];
+cartoleria.splice(1, 1, 'Diario');
+console.log(cartoleria);
 
 /* ESERCIZIO 10 — Cerca un articolo
    Array prodotti = ['Penna', 'Quaderno', 'Zaino'].
@@ -136,6 +138,15 @@ console.log(numeri.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let prodotti = ['Penna', 'Quaderno', 'Zaino'];
+console.log(`Zaino è nel carrello: ${prodotti.includes('Zaino')}`);
+
+let posizione= prodotti.indexOf('Zaino');
+if (posizione !== -1){
+   console.log(posizione);
+} else {
+   console.log(`Non in carrello`);
+};
 
 /* ESERCIZIO 11 — Lista utenti
    Array utenti di 3 oggetti { nome, eta }.
