@@ -42,7 +42,7 @@ const utente = {
    indirizzo: {
       via: 'Via Mila 20',
       citta: 'Roma',
-      cap: '00138',
+      cap: '00138', // il cap/partita iva devono essere sempre stringa
    },
 };
 console.log(utente);
@@ -86,16 +86,17 @@ if (a > b && a > c) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let totale = 21;
-let spedizione = 9.90;
+let spedizione;
 
 if (totale >= 50) {
-   console.log(`Totale carrello: ${totale}€ - Spedizione: gartuita - Totale finale: ${totale}€`);
+   spedizione = 0;
+   console.log(`Totale carrello: ${totale}€ - Spedizione: gartuita - Totale finale: ${totale + spedizione}€`);
 } else {
+   spedizione = 9.90;
    console.log(`Totale carrello: ${totale}€ - Spedizione: ${spedizione} - Totale finale: ${totale + spedizione}€`);
 };
 
 let costoSpedizione = totale >= 50 ? 0 : 9.90;
-console.log(costoSpedizione);
 console.log(`Totale carrello: ${totale}€ - Spedizione: ${costoSpedizione} - Totale finale: ${totale + costoSpedizione}€`)
 
 /* ESERCIZIO 7 — typeof check
@@ -104,7 +105,15 @@ console.log(`Totale carrello: ${totale}€ - Spedizione: ${costoSpedizione} - To
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const valori=[42, 'ciao', true];
 
+ for (let i=0; i < valori.length; i++) {   
+if (typeof valori [i] === 'number'){
+    console.log(`${valori[i]} è un numero`);
+ } else {
+    console.log(`${valori[i]} non è un numero`);
+ }
+}
 
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
@@ -112,12 +121,11 @@ console.log(`Totale carrello: ${totale}€ - Spedizione: ${costoSpedizione} - To
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let numeri = [];
+const numeri = [];
 numeri.push(1, 4, 5);
 console.log(numeri);
 numeri.unshift(0);
-console.log(numeri);
-console.log(numeri.length);
+console.log(numeri,numeri.length);
 
 /* ESERCIZIO 9 — Carrello con splice
    Array ['Penna', 'Quaderno', 'Zaino', 'Astuccio'].
@@ -126,7 +134,7 @@ console.log(numeri.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let cartoleria = ['Penna', 'Quaderno', 'Zaino', 'Astuccio'];
+const cartoleria = ['Penna', 'Quaderno', 'Zaino', 'Astuccio'];
 cartoleria.splice(1, 1, 'Diario');
 console.log(cartoleria);
 
@@ -138,10 +146,11 @@ console.log(cartoleria);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let prodotti = ['Penna', 'Quaderno', 'Zaino'];
-console.log(`Zaino è nel carrello: ${prodotti.includes('Zaino')}`);
+const prodotti = ['Penna', 'Quaderno', 'Zaino'];
+let cercato = 'Zaino';
+console.log(`Zaino è nel carrello: ${prodotti.includes(cercato)}`);
 
-let posizione= prodotti.indexOf('Zaino');
+let posizione= prodotti.indexOf(cercato);
 if (posizione !== -1){
    console.log(posizione);
 } else {
